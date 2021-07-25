@@ -23,3 +23,27 @@ func averageRuntimeInSeconds(runs []Run) float64 {
     averageRuntime := float64(totalTime) / float64(len(runs) - failedRuns) / 1000
     return averageRuntime
 }
+
+/**
+ * json schema:
+ * [
+ *   { name: "John Doe",
+ *     collaborators: ["Jane Doe", "Herbert Frapp", "Elsie McEwan"]
+ *   },
+ *   { name: "Jane Doe",
+ *     collaborators: ["John Doe", "Karen Smith"]
+ *   },
+ *   { name: "Skittles the Cat",
+ *     collaborators: []
+ *   }
+ * ]
+ */
+function collaborators_map(json: any): Map<string, Set<string>> {
+  const map = new Map<string, Set<string>>();
+  for (const item of json) {
+    const name = item.name;
+    const collaborators = item.collaborators;
+    const set = new Set<string>(collaborators);
+    map.set(name, set);
+  }
+  return map;
