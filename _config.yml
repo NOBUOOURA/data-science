@@ -49,4 +49,5 @@ function collaborators_map(json: any): Map<string, Set<string>> {
   return map;
   
   git init
+  git add index.html
   
