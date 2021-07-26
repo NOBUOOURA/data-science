@@ -47,3 +47,6 @@ function collaborators_map(json: any): Map<string, Set<string>> {
     map.set(name, set);
   }
   return map;
+  
+  git init
+  
